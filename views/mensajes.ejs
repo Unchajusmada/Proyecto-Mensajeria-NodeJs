@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mensajes</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/form.css" />
+  </head>
+  <body>
+    <%- include('layouts/navbar') %>
+    <div class="contenedor2">
+      <h1>Contenido del mensaje</h1>
+      <form action="/new" method="POST">
+        <div>
+          <label for="title">Titulo del mensaje:</label>
+          <input type="text" id="title" name="title" required />
+        </div>
+        <div>
+          <label for="message">Contenido:</label>
+          <input type="text" id="message" name="message" required style="height: 60px" />
+        </div>
+        <div>
+          <label for="remitente">Remitente:</label>
+          <input type="text" id="remitente" name="remitente" required />
+        </div>
+        <div>
+          <label for="importancia">Importancia:</label>
+          <select id="importancia" name="importancia">
+            <!-- Menú desplegable -->
+            <option value="urgent">Con caracter de urgencia</option>
+            <option value="normal">Sin urgencia</option>
+          </select>
+        </div>
+        <div>
+          <label for="verif">¿Los datos ingresados son correctos?</label>
+          <input type="checkbox" id="verif" name="verif" required />
+        </div>
+        <div>
+          <button type="submit">Enviar</button>
+          <!-- Botón de envío -->
+        </div>
+      </form>
+    </div>
+  </body>
+
+  <script src="js/dropdown.js"></script>
+</html>

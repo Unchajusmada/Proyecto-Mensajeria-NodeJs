@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <%- include('layouts/navbar') %>
+    <div class="contenedor">
+      <h1>Hola, esta es la pagina de inicio</h1>
+      <h4>Bienvenido a la pagina que te permitira enviar mensajes usando Node y Express</h4>
+      <div class="grid-container">
+        <% messages.forEach((message) => { %>
+            <div class="grid-item" onclick="openMessage('<%= message.title %>', '<%= message.contenido %>', '<%= message.remitente %>', '<%= message.importancia %>', '<%= message.added %>', '<%= message.id %>')">
+                Mensaje de <%- message.remitente %>
+            </div>
+        <% }); %>
+    </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="js/msgDisplay.js"></script>
+  <script src="js/dropdown.js"></script>
+</html>
