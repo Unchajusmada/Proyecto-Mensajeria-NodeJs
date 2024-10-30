@@ -8,9 +8,11 @@
   padding: 2em 10em;
   text-align: center;
 }
+
 .contenedor2 {
   padding: 2em 10em;
 }
+
 .navbar {
   overflow: hidden;
   background-color: #333;
@@ -97,4 +99,33 @@
 /* Efecto al pasar el ratón sobre el elemento */
 .grid-item:hover {
   background-color: #4cae4c; /* Color más oscuro al pasar el ratón */
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+  .contenedor,
+  .contenedor2 {
+    padding: 2em 5%; /* Reduce el padding en pantallas más pequeñas */
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(100px, 1fr)
+    ); /* Ajusta el tamaño mínimo de los elementos */
+  }
+
+  .navbar {
+    text-align: center; /* Centra la navbar en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar a {
+    font-size: 14px; /* Reduce el tamaño de fuente en pantallas muy pequeñas */
+  }
+
+  .grid-item {
+    padding: 15px; /* Reduce el padding de los elementos de la cuadrícula */
+  }
 }
